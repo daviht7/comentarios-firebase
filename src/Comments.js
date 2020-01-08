@@ -1,14 +1,16 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import Comment from './Comment'
 
 export default function src({ comments }) {
+
+  const keys = Object.keys(comments)
+
   return (
       <div>
-        {comments.map(c => (
-          <div>{c}</div>
-        ))
-        }
-    </div>
+       {keys.map(comm => (
+         <Comment c={comments[comm]} key={comm} />
+       ))}
+      </div>
   );
 }
